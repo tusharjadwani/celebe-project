@@ -18,20 +18,22 @@ const Filter = (params) => {
 
     return (
         <div>
-            <div style={{textAlign:"center"}}>
-                <h1 style={{display:"inline"}}>Apply Filters*</h1><span>*Use on Desktop Only For Now</span>
-            </div>
+            <h1>Apply Filters*</h1>
             <div className='input-group m-3'>
                 {output && <div style={{ background: `url(${output}) no-repeat`, width: crop.width / window.devicePixelRatio, height: crop.height / window.devicePixelRatio }} className='filter'>
                     {src && <img style={{ width: crop.width, height: crop.height }} className="image" src={src} alt="" />}
 
                 </div>}
             </div>
-            <div className='filter-btn input-group'>
+            <div style={{marginBottom:"2rem"}} className='filter-btn input-group'>
                 <button onBlur={removeFilter} onClick={applyFilter} className='f5'></button>
                 <button onBlur={removeFilter} onClick={applyFilter} className='f6'></button>
                 <button onBlur={removeFilter} onClick={applyFilter} className='f7'></button>
                 <button onBlur={removeFilter} onClick={applyFilter} className='f8'></button>
+            </div>
+
+            <div style={{ textAlign: "center" }}>
+                <span>*Use on Desktop Only For Now</span>
             </div>
         </div>
 
